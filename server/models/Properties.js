@@ -9,6 +9,7 @@ const PropertiesSchema = mongoose.Schema(
     },
     description: String,
     tags: [String],
+    selectedFile: String,
   },
   { timestamps: true }
 );

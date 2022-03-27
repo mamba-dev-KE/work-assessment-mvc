@@ -2,7 +2,6 @@ import Properties from "../models/Properties.js";
 
 /**
  * HTTP STATUS CODES
- *
  * 400:bad request,
  * 404: not found,
  * 500: internal server error
