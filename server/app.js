@@ -1,27 +1,23 @@
 import express from "express";
-import mongoose from "mongoose";
 import chalk from "chalk";
 import "dotenv/config";
 
 import propertyRoutes from "./routes/properties.js";
+import dbConnect from "./db/db.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// database connection
+dbConnect();
+
 // middleware
+app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use("/api/properties", propertyRoutes);
 
-// mongoose and server connection
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(chalk.blue(`Server running on port: ${PORT}`));
-    });
-  })
-  .catch((error) => console.log(chalk.red(error.message)));
+// server connection
+app.listen(PORT, () => {
+  console.log(chalk.cyan(`Server running on port: ${PORT}`));
+});
