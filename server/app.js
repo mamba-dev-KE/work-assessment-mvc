@@ -3,16 +3,15 @@ import mongoose from "mongoose";
 import chalk from "chalk";
 import "dotenv/config";
 
+import propertyRoutes from "./routes/properties.js";
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // middleware
 
 //routes
-
-app.get("/properties", (req, res) => {
-  res.json({ message: "hello" });
-});
+app.use("/api/properties", propertyRoutes);
 
 // mongoose and server connection
 mongoose
