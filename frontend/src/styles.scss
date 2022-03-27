@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500&family=Ubuntu:wght@400;700;500&display=swap");
+
+:root {
+  box-sizing: border-box;
+  font-size: 10px;
+
+  --ff-primary: "Ubuntu", sans-serif;
+  --ff-secondary: "Mulish", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--ff-primary);
+
+  background-image: url("./assets/bg.svg");
+  background-size: cover;
+}
+
+// UTILITY CLASSES
+.container {
+  width: calc(100% - 3.5rem);
+  max-width: 160rem;
+}
+
+.flex {
+  display: flex;
+  --gap: 1em;
+  gap: var(--gap);
+}
+
+.grid {
+  display: grid;
+  --gap: 1em;
+  gap: var(--gap);
+}
+
+.center {
+  margin-inline: auto;
+}
+
+.pointer {
+  cursor: pointer;
+}

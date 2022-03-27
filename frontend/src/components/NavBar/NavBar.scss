@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  min-height: 6.5rem;
+  background-color: tomato;
+
+  place-items: center;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.nav {
+  min-height: 5rem;
+
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    align-items: center;
+
+    .logo__img {
+      font-size: 4rem;
+    }
+
+    a {
+      text-decoration: none;
+      letter-spacing: 0.4em;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: black;
+      font-size: 2rem;
+    }
+  }
+
+  .nav__list {
+    list-style-type: none;
+
+    .nav__list-item {
+      --gap: 0.5em;
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.nav__list-icon {
+  font-size: 2rem;
+}
