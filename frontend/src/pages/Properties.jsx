@@ -17,7 +17,7 @@ const Properties = () => {
   return (
     <section className="properties">
       <h1 className="properties__title">Our Properties</h1>
-      <div className="properties__container grid">
+      <div className="properties__container grid container center">
         {properties.map((property) => (
           <Property {...property} key={property._id} />
         ))}
