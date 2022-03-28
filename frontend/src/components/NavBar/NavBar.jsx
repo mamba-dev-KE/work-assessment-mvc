@@ -18,10 +18,10 @@ const NavBar = () => {
               <Link to="/add">Add</Link>
               <MdAddBox className="nav__list-icon" />
             </li>
-            <li className="nav__list-item flex">
+            {/* <li className="nav__list-item flex">
               <Link to="/all">View All</Link>
               <MdViewSidebar className="nav__list-icon" />
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

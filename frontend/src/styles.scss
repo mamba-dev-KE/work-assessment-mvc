@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500&family=Ubuntu:wght@400;700;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Ubuntu:wght@400;500&display=swap");
 
 :root {
   box-sizing: border-box;
   font-size: 10px;
 
   --ff-primary: "Ubuntu", sans-serif;
-  --ff-secondary: "Mulish", sans-serif;
+  --ff-secondary: "Montserrat", sans-serif;
 }
 
 *,
@@ -19,9 +19,14 @@
 body {
   font-size: 1.6rem;
   font-family: var(--ff-primary);
+  line-height: 1.6;
 
   background-image: url("./assets/bg.svg");
   background-size: cover;
+}
+
+img {
+  max-width: 100%;
 }
 
 // UTILITY CLASSES

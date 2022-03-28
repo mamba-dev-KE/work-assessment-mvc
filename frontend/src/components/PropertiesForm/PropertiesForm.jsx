@@ -21,6 +21,7 @@ const PropertiesForm = () => {
       .post("http://localhost:8000/api/properties", newProperty, {
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://localhost:3000",
         },
       })
       .then((response) => console.log(response))
@@ -40,7 +41,6 @@ const PropertiesForm = () => {
 
   return (
     <section>
-      <h1>Properties Form</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Property Name</label>
         <input

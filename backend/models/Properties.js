@@ -5,7 +5,6 @@ const PropertiesSchema = mongoose.Schema(
     name: {
       type: String,
       required: [true, "Kindly fill before submitting"],
-      maxlength: [20, "name cannot be more than 20 characters"],
     },
     description: String,
     selectedFile: String,
