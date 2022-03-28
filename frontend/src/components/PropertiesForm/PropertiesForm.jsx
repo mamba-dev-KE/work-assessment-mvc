@@ -1,17 +1,41 @@
 import { useState } from "react";
+import FileBase from "react-file-base64";
+import axios from "axios";
 
 const PropertiesForm = () => {
-  const [formData, setformData] = useState({});
-  const [properties, setProperties] = useState({ name: "", description: "" });
+  const [properties, setProperties] = useState({
+    name: "",
+    description: "",
+    selectedFile: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormData;
+    const newProperty = {
+      name: properties.name,
+      description: properties.description,
+      selectedFile: properties.selectedFile,
+    };
+
+    axios
+      .post("http://localhost:8000/api/properties", newProperty, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+
+    setProperties({
+      name: "",
+      description: "",
+      selectedFile: "",
+    });
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProperties({ [name]: value });
+    setProperties({ ...properties, [name]: value });
   };
 
   return (
@@ -29,11 +53,26 @@ const PropertiesForm = () => {
         />
 
         <label htmlFor="name">Property Description</label>
-        <textarea value={properties.description} onChange={handleChange} />
-        <button>Add Property</button>
-      </form>
+        <textarea
+          value={properties.description}
+          name="description"
+          onChange={handleChange}
+        />
 
+        <div>
+          <FileBase
+            type="file"
+            multiple={false}
+            onDone={({ base64 }) =>
+              setProperties({ ...properties, selectedFile: base64 })
+            }
+          />
+        </div>
+        <button type="submit">Add Property</button>
+      </form>
       {properties.name}
+      {properties.description}
+      {properties.selectedFile}
     </section>
   );
 };

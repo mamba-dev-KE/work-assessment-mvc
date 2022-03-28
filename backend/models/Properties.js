@@ -8,7 +8,6 @@ const PropertiesSchema = mongoose.Schema(
       maxlength: [20, "name cannot be more than 20 characters"],
     },
     description: String,
-    tags: [String],
     selectedFile: String,
   },
   { timestamps: true }

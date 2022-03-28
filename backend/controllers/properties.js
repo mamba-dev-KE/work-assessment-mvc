@@ -24,7 +24,7 @@ export const createProperty = async (req, res) => {
     const property = await Properties.create(req.body);
     res.status(200).json(property);
   } catch (error) {
-    req.status(500).json({ message: error });
+    res.status(500).json({ message: error });
   }
 };
 

@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import PropertiesForm from "./components/PropertiesForm/PropertiesForm";
 import Add from "./pages/Add";
 import All from "./pages/All";
-import Dashboard from "./pages/Dashboard";
+import Properties from "./pages/Properties";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <NavBar />
         <PropertiesForm />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Properties />} />
           <Route path="/add" element={<Add />} />
           <Route path="/all" element={<All />} />
         </Routes>
