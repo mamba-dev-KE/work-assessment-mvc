@@ -70,9 +70,6 @@ const PropertiesForm = () => {
         </div>
         <button type="submit">Add Property</button>
       </form>
-      {properties.name}
-      {properties.description}
-      {properties.selectedFile}
     </section>
   );
 };

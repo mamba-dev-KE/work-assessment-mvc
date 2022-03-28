@@ -1,5 +1,5 @@
 import React from "react";
-import { MdAddBox, MdViewSidebar } from "react-icons/md";
+import { MdAddBox } from "react-icons/md";
 import { FaLaptopHouse } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
@@ -18,10 +18,6 @@ const NavBar = () => {
               <Link to="/add">Add</Link>
               <MdAddBox className="nav__list-icon" />
             </li>
-            {/* <li className="nav__list-item flex">
-              <Link to="/all">View All</Link>
-              <MdViewSidebar className="nav__list-icon" />
-            </li> */}
           </ul>
         </nav>
       </div>
