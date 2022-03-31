@@ -13,7 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/mamba-dev-KE/work-assessment-mvc.git"
   },
-  "engines": {node: 16.14.0
+  "engines": {
+    "node": "16.14.0"
   },
   "keywords": [],
   "author": "",
