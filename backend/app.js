@@ -22,6 +22,11 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/properties", propertyRoutes);
 
+//test app on deploy
+app.get("/", (req, res) => {
+  res.send("App works!");
+});
+
 // server connection
 app.listen(PORT, () => {
   console.log(chalk.cyan(`Server running on port: ${PORT}`));
