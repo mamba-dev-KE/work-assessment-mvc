@@ -16,8 +16,6 @@ const Properties = () => {
     });
   }, []);
 
-  console.log(quotes);
-
   return (
     <section className="quotes">
       <h1 className="quotes__title">Quotes</h1>

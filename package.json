@@ -5,13 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "server": "cd backend && nodemon app.js",
+    "start": "cd backend && node app.js",
     "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build"
+    "build": "cd frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mamba-dev-KE/work-assessment-mvc.git"
+  },
+  "engines": {node: 16.14.0
   },
   "keywords": [],
   "author": "",
