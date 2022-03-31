@@ -4,7 +4,7 @@ import morgan from "morgan";
 import "dotenv/config";
 import cors from "cors";
 
-import propertyRoutes from "./routes/properties.js";
+import quoteRoutes from "./routes/quotes.js";
 import dbConnect from "./db/db.js";
 
 const app = express();
@@ -20,7 +20,12 @@ app.use(cors());
 app.use(morgan("dev"));
 
 //routes
-app.use("/api/properties", propertyRoutes);
+app.use("/api/quotes", quoteRoutes);
+
+//test if API works
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "API works" });
+});
 
 // server connection
 app.listen(PORT, () => {
