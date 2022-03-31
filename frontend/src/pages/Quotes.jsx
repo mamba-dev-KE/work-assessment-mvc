@@ -6,7 +6,7 @@ import Quote from "../components/Quote/Quote";
 const Properties = () => {
   const [quotes, setQuotes] = useState([]);
 
-  // const handleClick = () => {
+  // const handleClick = (_id) => {
   //   axios.delete(`http://localhost:5000/api/quotes/${_id}`);
   // };
 

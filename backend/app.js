@@ -3,12 +3,14 @@ import chalk from "chalk";
 import morgan from "morgan";
 import "dotenv/config";
 import cors from "cors";
+
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 
 import quoteRoutes from "./routes/quotes.js";
 import dbConnect from "./db/db.js";
 
+// variable declarations
 const app = express();
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
