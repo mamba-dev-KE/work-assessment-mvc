@@ -16,7 +16,7 @@ const QuotesForm = () => {
     };
 
     axios
-      .post("http://localhost:5000/api/quotes", newQuote, {
+      .post("/api/quotes", newQuote, {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "http://localhost:3000",

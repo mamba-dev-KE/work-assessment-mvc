@@ -11,7 +11,7 @@ const Properties = () => {
   // };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/quotes").then((res) => {
+    axios.get("/api/quotes").then((res) => {
       setQuotes(res.data);
     });
   }, []);
