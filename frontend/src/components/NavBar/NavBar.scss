@@ -1,7 +1,13 @@
 .header {
   width: 100%;
-  min-height: 6.5rem;
-  background-color: tomato;
+  min-height: 7.5rem;
+
+  background-color: hsl(var(--clr-primary));
+  box-shadow: 0 0 8px hsl(var(--clr-dark));
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
 
   place-items: center;
 
@@ -24,12 +30,14 @@
     }
 
     a {
-      text-decoration: none;
-      letter-spacing: 0.4em;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: black;
       font-size: 2rem;
+      font-weight: 700;
+
+      color: black;
+      letter-spacing: 0.4em;
+
+      text-transform: uppercase;
+      text-decoration: none;
     }
   }
 
@@ -41,9 +49,13 @@
       --gap: 0.5em;
 
       a {
-        text-decoration: none;
-        color: black;
         font-size: 1.8rem;
+        font-weight: 700;
+
+        letter-spacing: 0.2em;
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
       }
     }
   }

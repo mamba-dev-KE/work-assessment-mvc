@@ -1,4 +1,5 @@
-import { useState } from "react";
+import "./QuotesForm.scss";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const QuotesForm = () => {
@@ -36,20 +37,26 @@ const QuotesForm = () => {
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="quote">Quote</label>
-        <input
-          type="text"
-          name="quote"
-          id="quote"
-          placeholder="Enter quote."
+    <section className="quote__form grid">
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="form__title"> Add Quote</h1>
+        <label htmlFor="quote">Quote:</label>
+        <textarea
+          className="center"
           value={quotes.quote}
+          name="quote"
           onChange={handleChange}
         />
 
-        <label htmlFor="quote">Quote Author</label>
-        <textarea value={quotes.author} name="author" onChange={handleChange} />
+        <label htmlFor="author">Quote Author:</label>
+        <input
+          type="text"
+          name="author"
+          className="center"
+          id="author"
+          value={quotes.author}
+          onChange={handleChange}
+        />
         <button type="submit">Add Quote</button>
       </form>
     </section>
