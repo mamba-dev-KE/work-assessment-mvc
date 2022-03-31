@@ -27,6 +27,11 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "API works" });
 });
 
+//test app on deploy
+app.get("/", (req, res) => {
+  res.send("API works!");
+});
+
 // server connection
 app.listen(PORT, () => {
   console.log(chalk.cyan(`Server running on port: ${PORT}`));
