@@ -24,7 +24,7 @@ app.use("/api/properties", propertyRoutes);
 
 //test app on deploy
 app.get("/", (req, res) => {
-  res.send("App works!");
+  res.send("API works!");
 });
 
 // server connection
