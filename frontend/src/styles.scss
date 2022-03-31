@@ -6,6 +6,11 @@
 
   --ff-primary: "Ubuntu", sans-serif;
   --ff-secondary: "Montserrat", sans-serif;
+
+  --clr-primary: 359 88% 66%;
+  --clr-secondary: 136 100% 86%;
+
+  --clr-dark: 0 0% 29%;
 }
 
 *,
@@ -23,10 +28,7 @@ body {
 
   background-image: url("./assets/bg.svg");
   background-size: cover;
-}
-
-img {
-  max-width: 100%;
+  background-attachment: fixed;
 }
 
 // UTILITY CLASSES

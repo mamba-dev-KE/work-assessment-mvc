@@ -1,0 +1,42 @@
+.quote__form {
+  justify-items: center;
+  margin-top: 10rem;
+}
+
+.form {
+  width: 90%;
+  max-width: 100rem;
+  padding-bottom: 3em;
+
+  background-color: hsl(var(--clr-secondary) / 0.4);
+  backdrop-filter: blur(8px);
+
+  text-align: center;
+
+  textarea,
+  input {
+    width: 80%;
+    border: 0;
+    display: block;
+
+    padding: 1em;
+    margin-block: 1.5em;
+  }
+
+  textarea {
+    height: 10rem;
+    padding: 1em;
+  }
+
+  input {
+    height: 4rem;
+  }
+
+  label {
+    font-weight: 500;
+  }
+}
+
+.form__title {
+  padding: 1em;
+}

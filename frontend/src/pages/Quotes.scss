@@ -1,15 +1,18 @@
-.properties {
+.quotes {
   padding-bottom: 2em;
 }
 
-.properties__title {
+.quotes__title {
   text-align: center;
-  margin-block: 1.5em;
+  margin-block-start: 5em;
+  margin-block-end: 1em;
   font-family: --var(--ff-secondary);
 
   letter-spacing: 0.5em;
 }
 
-.properties__container {
+.quotes__container {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-content: center;
+  padding-inline: 5em;
 }
