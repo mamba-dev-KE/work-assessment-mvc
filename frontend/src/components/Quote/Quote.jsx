@@ -3,9 +3,10 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { deleteQuote } from "../../utils/utils";
 
-const Quote = ({ quote, author, setCurrentID, _id }) => {
+const Quote = ({ quote, author, setCurrentID, _id, isUpdate, setIsUpdate }) => {
   const handleDelete = () => {
-    deleteQuote(`/api/quotes/${_id}`);
+    deleteQuote(_id);
+    setIsUpdate(!isUpdate);
   };
 
   return (

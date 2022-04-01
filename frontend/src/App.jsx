@@ -9,12 +9,13 @@ import { readQuotes } from "./utils/utils";
 const App = () => {
   const [quotesData, setQuotesData] = useState([]);
   const [currentID, setCurrentID] = useState(null);
+  const [isUpdate, setIsUpdate] = useState(false);
 
   useEffect(() => {
-    readQuotes("/api/quotes").then((res) => {
+    readQuotes().then((res) => {
       setQuotesData(res.data);
     });
-  }, []);
+  }, [isUpdate, currentID]);
 
   return (
     <div>
@@ -23,11 +24,15 @@ const App = () => {
         quotesData={quotesData}
         currentID={currentID}
         setCurrentID={setCurrentID}
+        isUpdate={isUpdate}
+        setIsUpdate={setIsUpdate}
       />
       <Quotes
         quotesData={quotesData}
         currentID={currentID}
         setCurrentID={setCurrentID}
+        isUpdate={isUpdate}
+        setIsUpdate={setIsUpdate}
       />
     </div>
     // <Router>

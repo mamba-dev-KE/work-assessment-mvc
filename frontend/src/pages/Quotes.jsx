@@ -1,8 +1,7 @@
 import "./Quotes.scss";
 import Quote from "../components/Quote/Quote";
-import QuotesForm from "../components/QuotesForm/QuotesForm";
 
-const Quotes = ({ setCurrentID, quotesData }) => {
+const Quotes = ({ setCurrentID, quotesData, isUpdate, setIsUpdate }) => {
   return !quotesData.length ? (
     "Loading"
   ) : (
@@ -11,7 +10,13 @@ const Quotes = ({ setCurrentID, quotesData }) => {
         <h1 className="quotes__title">Quotes</h1>
         <div className="quotes__container container grid center">
           {quotesData.map((quote) => (
-            <Quote {...quote} key={quote._id} setCurrentID={setCurrentID} />
+            <Quote
+              {...quote}
+              key={quote._id}
+              setCurrentID={setCurrentID}
+              isUpdate={isUpdate}
+              setIsUpdate={setIsUpdate}
+            />
           ))}
         </div>
       </section>

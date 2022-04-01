@@ -2,14 +2,21 @@ import "./QuotesForm.scss";
 import { useState, useEffect } from "react";
 import { createQuote, updateQuote } from "../../utils/utils";
 
-const QuotesForm = ({ quotesData, currentID }) => {
+const QuotesForm = ({
+  quotesData,
+  currentID,
+  setCurrentID,
+  isUpdate,
+  setIsUpdate,
+}) => {
+  // quote state declaration
   const [quotes, setQuotes] = useState({
     quote: "",
     author: "",
   });
 
+  // find the post being editted if currentID is not null
   const updatedPost = quotesData.find((quote) => quote._id === currentID);
-  console.log(updatedPost);
 
   // update post
   useEffect(() => {
@@ -18,6 +25,7 @@ const QuotesForm = ({ quotesData, currentID }) => {
     }
   }, [updatedPost]);
 
+  // handle form submit -- update or create
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,22 +33,32 @@ const QuotesForm = ({ quotesData, currentID }) => {
       quote: quotes.quote,
       author: quotes.author,
     };
-
+    // check for currentID and create or update depending on presence of id
     if (currentID) {
       updateQuote(currentID, newQuote).catch((error) => console.log(error));
+      // clear fields after quote update
+      clearFields();
     } else {
       createQuote(newQuote).catch((error) => console.log(error));
+      setIsUpdate(!isUpdate);
+      // clear fields after quote creation
+      clearFields();
     }
+  };
 
+  // handle form input for edit and create
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setQuotes({ ...quotes, [name]: value });
+  };
+
+  const clearFields = () => {
+    // when clear button is pressed, reset currentID to null and clear form fields
+    setCurrentID(null);
     setQuotes({
       quote: "",
       author: "",
     });
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setQuotes({ ...quotes, [name]: value });
   };
 
   return (
@@ -64,8 +82,8 @@ const QuotesForm = ({ quotesData, currentID }) => {
           value={quotes.author}
           onChange={handleChange}
         />
-        <button type="submit">Add Quote</button>
-        <button type="submit">Clear Fields</button>
+        <button type="submit">{currentID ? "Edit" : "Add"} Quote</button>
+        <button onClick={clearFields}>Clear Fields</button>
       </form>
     </section>
   );
