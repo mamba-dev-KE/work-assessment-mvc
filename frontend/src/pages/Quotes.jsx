@@ -1,31 +1,22 @@
 import "./Quotes.scss";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import Quote from "../components/Quote/Quote";
+import QuotesForm from "../components/QuotesForm/QuotesForm";
 
-const Properties = () => {
-  const [quotes, setQuotes] = useState([]);
-
-  // const handleClick = (_id) => {
-  //   axios.delete(`http://localhost:5000/api/quotes/${_id}`);
-  // };
-
-  useEffect(() => {
-    axios.get("/api/quotes").then((res) => {
-      setQuotes(res.data);
-    });
-  }, []);
-
-  return (
-    <section className="quotes">
-      <h1 className="quotes__title">Quotes</h1>
-      <div className="quotes__container container grid center">
-        {quotes.map((Quotes) => (
-          <Quote {...Quotes} key={Quotes._id} />
-        ))}
-      </div>
-    </section>
+const Quotes = ({ setCurrentID, quotesData }) => {
+  return !quotesData.length ? (
+    "Loading"
+  ) : (
+    <>
+      <section className="quotes">
+        <h1 className="quotes__title">Quotes</h1>
+        <div className="quotes__container container grid center">
+          {quotesData.map((quote) => (
+            <Quote {...quote} key={quote._id} setCurrentID={setCurrentID} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
-export default Properties;
+export default Quotes;

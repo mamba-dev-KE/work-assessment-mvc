@@ -9,6 +9,6 @@ import {
 const router = express.Router();
 
 router.route("/").get(getQuotes).post(createQuote);
-router.route("/:id").put(updateQuote).delete(deleteQuote);
+router.route("/:id").patch(updateQuote).delete(deleteQuote);
 
 export default router;

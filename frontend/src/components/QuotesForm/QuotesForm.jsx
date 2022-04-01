@@ -1,29 +1,36 @@
 import "./QuotesForm.scss";
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import { createQuote, updateQuote } from "../../utils/utils";
 
-const QuotesForm = () => {
+const QuotesForm = ({ quotesData, currentID }) => {
   const [quotes, setQuotes] = useState({
     quote: "",
     author: "",
   });
 
+  const updatedPost = quotesData.find((quote) => quote._id === currentID);
+  console.log(updatedPost);
+
+  // update post
+  useEffect(() => {
+    if (updatedPost) {
+      setQuotes(updatedPost);
+    }
+  }, [updatedPost]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newQuote = {
       quote: quotes.quote,
       author: quotes.author,
     };
 
-    axios
-      .post("/api/quotes", newQuote, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "http://localhost:3000",
-        },
-      })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    if (currentID) {
+      updateQuote(currentID, newQuote).catch((error) => console.log(error));
+    } else {
+      createQuote(newQuote).catch((error) => console.log(error));
+    }
 
     setQuotes({
       quote: "",
@@ -39,7 +46,7 @@ const QuotesForm = () => {
   return (
     <section className="quote__form grid">
       <form className="form" onSubmit={handleSubmit}>
-        <h1 className="form__title"> Add Quote</h1>
+        <h1 className="form__title"> {currentID ? "Edit" : "Add"} Quote</h1>
         <label htmlFor="quote">Quote:</label>
         <textarea
           className="center"
@@ -58,6 +65,7 @@ const QuotesForm = () => {
           onChange={handleChange}
         />
         <button type="submit">Add Quote</button>
+        <button type="submit">Clear Fields</button>
       </form>
     </section>
   );
