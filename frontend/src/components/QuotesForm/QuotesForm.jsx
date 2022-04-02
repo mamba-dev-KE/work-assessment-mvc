@@ -1,6 +1,7 @@
 import "./QuotesForm.scss";
 import { useState, useEffect } from "react";
 import { createQuote, updateQuote } from "../../utils/utils";
+import { motion } from "framer-motion";
 
 const QuotesForm = ({
   quotesData,
@@ -8,6 +9,7 @@ const QuotesForm = ({
   setCurrentID,
   isUpdate,
   setIsUpdate,
+  isVisible,
 }) => {
   // quote state declaration
   const [quotes, setQuotes] = useState({
@@ -61,8 +63,29 @@ const QuotesForm = ({
     });
   };
 
+  // form animations
+  const formVariants = {
+    hidden: {
+      y: -1000,
+    },
+    visible: {
+      y: 100,
+    },
+  };
+
+  // hide and unhide form based on isVisible state
+  const formStyle = {
+    display: "none",
+  };
+
   return (
-    <section className="quote__form grid">
+    <motion.section
+      className="quote__form grid"
+      style={!isVisible ? formStyle : {}}
+      variants={formVariants}
+      initial="hidden"
+      animate={isVisible ? "visible" : ""}
+    >
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="form__title"> {currentID ? "Edit" : "Add"} Quote</h1>
         <label htmlFor="quote">Quote:</label>
@@ -85,7 +108,7 @@ const QuotesForm = ({
         <button type="submit">{currentID ? "Edit" : "Add"} Quote</button>
         <button onClick={clearFields}>Clear Fields</button>
       </form>
-    </section>
+    </motion.section>
   );
 };
 

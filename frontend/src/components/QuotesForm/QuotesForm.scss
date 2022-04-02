@@ -1,11 +1,10 @@
 .quote__form {
-  justify-items: center;
+  align-content: start;
   margin-top: 10rem;
 }
 
 .form {
-  width: 90%;
-  max-width: 100rem;
+  border-radius: 1rem;
   padding-bottom: 3em;
 
   background-color: hsl(var(--clr-secondary) / 0.4);
