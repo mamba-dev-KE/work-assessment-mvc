@@ -105,8 +105,12 @@ const QuotesForm = ({
           value={quotes.author}
           onChange={handleChange}
         />
-        <button type="submit">{currentID ? "Edit" : "Add"} Quote</button>
-        <button onClick={clearFields}>Clear Fields</button>
+        <button type="submit" className="form__btn">
+          {currentID ? "Edit" : "Add"} Quote
+        </button>
+        <button onClick={clearFields} className="form__btn">
+          Clear Fields
+        </button>
       </form>
     </motion.section>
   );

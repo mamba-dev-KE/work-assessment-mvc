@@ -38,7 +38,7 @@ const Quote = ({
       initial="hidden"
       animate="visible"
     >
-      <h3 className="quote__text">{quote}</h3>
+      <h3 className="quote__text">" {quote} "</h3>
       <p className="quote__author">{author}</p>
       <div className="quote__edit flex">
         <MdDelete className="quote__delete pointer" onClick={handleDelete} />
