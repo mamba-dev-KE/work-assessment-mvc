@@ -77,6 +77,9 @@ http://localhost:3000/
 ### Built with
 
 - ReactJS
+- NodeJS
+- ExpressJS
+- MongoDB
 - HTML5
 - SASS
 - Framer Motion
