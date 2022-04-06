@@ -10,7 +10,6 @@ const QuotesForm = ({
   isUpdate,
   setIsUpdate,
   isVisible,
-  setIsVisible,
 }) => {
   // quote state declaration
   const [quotes, setQuotes] = useState({

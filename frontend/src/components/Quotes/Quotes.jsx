@@ -1,6 +1,6 @@
 import "./Quotes.scss";
 import Quote from "../Quote/Quote";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Quotes = ({
   setCurrentID,
@@ -10,6 +10,7 @@ const Quotes = ({
   isVisible,
   setIsVisible,
 }) => {
+  // quotes section animation
   const quotesContainerVariant = {
     hidden: { opacity: 0 },
     visible: {

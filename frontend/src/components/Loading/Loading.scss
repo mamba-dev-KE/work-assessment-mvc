@@ -1,6 +1,7 @@
 .loading {
   place-items: center;
   align-self: center;
+  --gap: 3rem;
 }
 
 .loading__text {
@@ -8,23 +9,38 @@
   font-weight: bold;
   text-align: center;
   margin-top: 1rem;
+  animation: text 2s ease infinite;
 }
 
 .loading__icon {
   font-size: 5rem;
-  animation: rotate 2s infinite;
+  animation: icon 2s ease infinite;
 }
 
-@keyframes rotate {
+@keyframes text {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1.1);
   }
 
   50% {
-    transform: rotate(180deg);
+    transform: scale(1.15);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes icon {
+  0% {
+    transform: rotate(0deg) scale(0.7);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(0.7);
   }
 }

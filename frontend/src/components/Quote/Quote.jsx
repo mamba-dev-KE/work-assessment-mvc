@@ -11,20 +11,21 @@ const Quote = ({
   _id,
   isUpdate,
   setIsUpdate,
-  isVisible,
   setIsVisible,
 }) => {
+  // function to handle clicking on the delete button
   const handleDelete = () => {
     deleteQuote(_id);
     setIsUpdate(!isUpdate);
   };
 
+  // function to handle clicking on edit button
   const handleEdit = () => {
     setCurrentID(_id);
-    // setIsUpdate(true);
     setIsVisible(true);
   };
 
+  // article animations
   const articleVariant = {
     hidden: {
       opacity: 0,
