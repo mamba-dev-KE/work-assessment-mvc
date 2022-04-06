@@ -83,6 +83,7 @@ http://localhost:3000/
 - HTML5
 - SASS
 - Framer Motion
+- Axios
 - React Icons
 - CSS Grid
 - Mobile-first workflow
