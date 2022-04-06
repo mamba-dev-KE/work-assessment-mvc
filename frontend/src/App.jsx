@@ -23,6 +23,12 @@ const App = () => {
     readQuotes().then((res) => {
       setQuotesData(res.data);
     });
+
+    if (isUpdate || !isUpdate) {
+      readQuotes().then((res) => {
+        setQuotesData(res.data);
+      });
+    }
   }, [currentID, isUpdate, isVisible]);
 
   const containerStyles = {

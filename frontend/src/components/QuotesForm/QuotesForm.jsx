@@ -41,6 +41,7 @@ const QuotesForm = ({
       updateQuote(currentID, newQuote).catch((error) => console.log(error));
       // clear fields after quote update
       setIsUpdate(!isUpdate);
+      // setIsVisible(!isVisible);
       clearFields();
     } else {
       createQuote(newQuote).catch((error) => console.log(error));
