@@ -12,7 +12,7 @@ This application is a sample for teaching basic CRUD functionalities, MVC archit
 
 ### Installation
 
-- Clone the repository then cd into it
+- Clone the repository then change directory into it.
 
 ```
 git clone git@github.com:mamba-dev-KE/work-assessment-mvc.git
@@ -20,31 +20,44 @@ cd work-assessment-mvc
 
 ```
 
-- Create a .env file in the root of the /backend folder
+- Create a .env file in the root of the /backend folder.
 
 ```
 /work-assessment-mvc/backend/.env
 ```
 
-- Add the following environment variables to the .env file
+- Add the following environment variables to the .env file.
 
 ```
-MONGO_URI=mongodb+srv://work-assessment:<password>@<username>.wpaib.mongodb.net/quotes?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@mamba.wpaib.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 PORT=5000
 ```
-- The MONGO_URI can be gotten from the Mongo Atlas platform after creating a database and choosing the connect to application option.
-- The PORT is the port where we want our Node server to run
 
-- Run the following commands from the root of the whole project (in order)
+- The MONGO_URI can be gotten from the Mongo Atlas platform after creating a database and choosing the connect to application option.
+- The PORT is the port where we want our Node server to run, set it to 5000.
+
+- Run the following command from the root of the whole project in order.
 
 ```
 npm install
+
+```
+- Change directory into the frontend directory and run the command again.
+```
+cd frontend
+npm install
+
+```
+- Change directory back to the root folder and run the following command.
+
+```
+cd ..
 npm run dev
 
 ```
 
-- The first command will install all dev dependencies while the second command will run start scripts in the backend and frontend
-- After everything runs correctly, you can access the application under
+- The first two commands will install all project dependencies from NPM while the third command will run start scripts in the backend and frontend
+- After everything runs correctly, you can access the application under.
 
 ```
 http://localhost:3000
