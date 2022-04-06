@@ -10,6 +10,7 @@ const QuotesForm = ({
   isUpdate,
   setIsUpdate,
   isVisible,
+  setIsVisible,
 }) => {
   // quote state declaration
   const [quotes, setQuotes] = useState({
@@ -39,6 +40,7 @@ const QuotesForm = ({
     if (currentID) {
       updateQuote(currentID, newQuote).catch((error) => console.log(error));
       // clear fields after quote update
+      setIsUpdate(!isUpdate);
       clearFields();
     } else {
       createQuote(newQuote).catch((error) => console.log(error));

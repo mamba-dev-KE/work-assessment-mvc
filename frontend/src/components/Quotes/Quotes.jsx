@@ -21,32 +21,26 @@ const Quotes = ({
     },
   };
 
-  return !quotesData.length ? (
-    "Loading"
-  ) : (
-    <>
-      <motion.section className="quotes" initial="hidden" animate="visible">
-        <motion.h1 className="quotes__title">Quotes</motion.h1>
-        <motion.div
-          className="quotes__container container grid center"
-          variants={quotesContainerVariant}
-        >
-          {quotesData.map((quote) => (
-            <AnimatePresence>
-              <Quote
-                {...quote}
-                key={quote._id}
-                setCurrentID={setCurrentID}
-                isUpdate={isUpdate}
-                setIsUpdate={setIsUpdate}
-                isVisible={isVisible}
-                setIsVisible={setIsVisible}
-              />
-            </AnimatePresence>
-          ))}
-        </motion.div>
-      </motion.section>
-    </>
+  return (
+    <motion.section className="quotes" initial="hidden" animate="visible">
+      <motion.h1 className="quotes__title">Quotes</motion.h1>
+      <motion.div
+        className="quotes__container container grid center"
+        variants={quotesContainerVariant}
+      >
+        {quotesData.map((quote) => (
+          <Quote
+            {...quote}
+            key={quote._id}
+            setCurrentID={setCurrentID}
+            isUpdate={isUpdate}
+            setIsUpdate={setIsUpdate}
+            isVisible={isVisible}
+            setIsVisible={setIsVisible}
+          />
+        ))}
+      </motion.div>
+    </motion.section>
   );
 };
 

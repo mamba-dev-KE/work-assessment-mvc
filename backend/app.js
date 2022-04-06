@@ -29,7 +29,7 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/quotes", quoteRoutes);
 
-//test if API works
+//test if API works after deployment
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API works" });
 });
@@ -41,6 +41,5 @@ app.get("*", (req, res) => {
 
 // server connection
 app.listen(PORT, () => {
-  console.log(__dirname);
   console.log(chalk.cyan(`Server running on port: ${PORT}`));
 });

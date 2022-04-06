@@ -1,5 +1,7 @@
 .app__container {
   grid-template-columns: 100%;
+  // place-items: center;
+  min-height: 100vh;
 
   @media (min-width: 768px) {
     grid-template-columns: 40% 60%;

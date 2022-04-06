@@ -21,7 +21,8 @@ const Quote = ({
 
   const handleEdit = () => {
     setCurrentID(_id);
-    setIsVisible(!isVisible);
+    // setIsUpdate(true);
+    setIsVisible(true);
   };
 
   const articleVariant = {
