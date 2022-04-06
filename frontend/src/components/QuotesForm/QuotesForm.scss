@@ -56,8 +56,23 @@
   color: white;
 
   font-size: 1.5rem;
+
+  transition: transform 150ms ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .form__btn + .form__btn {
   margin-left: 1em;
+}
+
+.form__success {
+  align-items: center;
+
+  .form__success-icon {
+    fill: "green";
+    font-size: "3.5rem";
+  }
 }

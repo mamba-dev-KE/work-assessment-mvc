@@ -11,6 +11,7 @@ const QuotesForm = ({
   isUpdate,
   setIsUpdate,
   isVisible,
+  setIsVisible,
 }) => {
   // quote state declaration
   const [quotes, setQuotes] = useState({
@@ -39,12 +40,17 @@ const QuotesForm = ({
     // check for currentID and create or update depending on presence of id
     if (currentID) {
       updateQuote(currentID, newQuote).catch((error) => console.log(error));
-      // clear fields after quote update
+      // hide form after quote creation
+      setIsVisible(!isVisible);
+      // switch is update to rerender UI
       setIsUpdate(!isUpdate);
-      // setIsVisible(!isVisible);
+      // clear fields after quote update
       clearFields();
     } else {
       createQuote(newQuote).catch((error) => console.log(error));
+      // hide form after quote creation
+      setIsVisible(!isVisible);
+      // switch is update to rerender UI
       setIsUpdate(!isUpdate);
       // clear fields after quote creation
       clearFields();
@@ -99,10 +105,10 @@ const QuotesForm = ({
           value={quotes.author}
           onChange={handleChange}
         />
-        <button type="submit" className="form__btn">
+        <button type="submit" className="form__btn pointer">
           {currentID ? "Edit" : "Add"} Quote
         </button>
-        <button onClick={clearFields} className="form__btn">
+        <button onClick={clearFields} className="form__btn pointer">
           Clear Fields
         </button>
       </form>
