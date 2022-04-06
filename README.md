@@ -1,10 +1,10 @@
 # Quotes CRUD Application
 
-This application is a sample applciation for teaching basic CRUD functionalities, MVC architecture, and API creation and consumption in the JavaScript ecosystem
+This application is a sample for teaching basic CRUD functionalities, MVC architecture, and API creation and consumption in the JavaScript ecosystem.
 
 ## Table of contents
 
-- [Installation](#overview)
+- [Installation](#installation)
 - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -12,14 +12,29 @@ This application is a sample applciation for teaching basic CRUD functionalities
 
 ### Installation
 
-- Clone the repository
+- Clone the repository then cd into it
 
 ```
 git clone git@github.com:mamba-dev-KE/work-assessment-mvc.git
+cd work-assessment-mvc
 
 ```
 
 - Create a .env file in the root of the /backend folder
+
+```
+/work-assessment-mvc/backend/.env
+```
+
+- Add the following environment variables to the .env file
+
+```
+MONGO_URI=mongodb+srv://work-assessment:<password>@<username>.wpaib.mongodb.net/quotes?retryWrites=true&w=majority
+PORT=5000
+```
+- The MONGO_URI can be gotten from the Mongo Atlas platform after creating a database and choosing the connect to application option.
+- The PORT is the port where we want our Node server to run
+
 - Run the following commands from the root of the whole project (in order)
 
 ```
