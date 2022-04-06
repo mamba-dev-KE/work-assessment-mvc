@@ -1,4 +1,5 @@
 import "./Quotes.scss";
+import { quotesContainerVariant } from "./Animation";
 import Quote from "../Quote/Quote";
 import { motion } from "framer-motion";
 
@@ -10,23 +11,13 @@ const Quotes = ({
   isVisible,
   setIsVisible,
 }) => {
-  // quotes section animation
-  const quotesContainerVariant = {
-    hidden: { opacity: 0.8 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
   return (
     <motion.section className="quotes" initial="hidden" animate="visible">
       <motion.h1 className="quotes__title">Quotes</motion.h1>
       <motion.div
         className="quotes__container container grid center"
         variants={quotesContainerVariant}
+        layout
       >
         {quotesData.map((quote) => (
           <Quote

@@ -1,9 +1,8 @@
-import React from "react";
+import "./NavBar.scss";
 import { MdAddBox } from "react-icons/md";
 import { AiFillMinusSquare } from "react-icons/ai";
 import { BsChatLeftQuote } from "react-icons/bs";
 import { motion } from "framer-motion";
-import "./NavBar.scss";
 import { headerVariants } from "./Animation";
 
 const NavBar = ({ isVisible, setIsVisible }) => {

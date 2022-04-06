@@ -27,7 +27,11 @@ const Quote = ({
   };
 
   return (
-    <motion.article className="quote center grid" variants={quoteVariant}>
+    <motion.article
+      className="quote center grid"
+      variants={quoteVariant}
+      layout
+    >
       <h3 className="quote__text">" {quote} "</h3>
       <p className="quote__author">{author}</p>
       <div className="quote__edit flex">

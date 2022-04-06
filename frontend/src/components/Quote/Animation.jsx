@@ -9,4 +9,8 @@ export const quoteVariant = {
     scale: 1,
     transition: { staggerChildren: 0.5 },
   },
+  exit: {
+    opacity: 0,
+    scale: 0,
+  },
 };

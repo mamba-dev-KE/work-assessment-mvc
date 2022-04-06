@@ -1,7 +1,8 @@
 import "./QuotesForm.scss";
+import { formVariants } from "./Animation";
 import { useState, useEffect } from "react";
 import { createQuote, updateQuote } from "../../utils/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const QuotesForm = ({
   quotesData,
@@ -65,66 +66,47 @@ const QuotesForm = ({
     });
   };
 
-  // form animations
-  const formVariants = {
-    hidden: {
-      y: -1000,
-    },
-    visible: {
-      y: 100,
-    },
-    exit: {
-      y: 1000,
-      transition: {
-        duration: 5,
-      },
-    },
-  };
-
   // hide and unhide form based on isVisible state
   const formStyle = {
     display: "none",
   };
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      <motion.section
-        className="quote__form grid"
-        style={!isVisible ? formStyle : {}}
-        variants={formVariants}
-        initial="hidden"
-        animate={isVisible ? "visible" : ""}
-        exit="exit"
-        key="form"
-      >
-        <form className="form" onSubmit={handleSubmit}>
-          <h1 className="form__title"> {currentID ? "Edit" : "Add"} Quote</h1>
-          <label htmlFor="quote">Quote:</label>
-          <textarea
-            className="center"
-            value={quotes.quote}
-            name="quote"
-            onChange={handleChange}
-          />
+    <motion.section
+      className="quote__form grid"
+      style={!isVisible ? formStyle : {}}
+      variants={formVariants}
+      initial="hidden"
+      animate={isVisible ? "visible" : ""}
+      exit="exit"
+    >
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="form__title"> {currentID ? "Edit" : "Add"} Quote</h1>
+        <label htmlFor="quote">Quote:</label>
+        <textarea
+          className="center"
+          value={quotes.quote}
+          name="quote"
+          onChange={handleChange}
+        />
 
-          <label htmlFor="author">Quote Author:</label>
-          <input
-            type="text"
-            name="author"
-            className="center"
-            id="author"
-            value={quotes.author}
-            onChange={handleChange}
-          />
-          <button type="submit" className="form__btn">
-            {currentID ? "Edit" : "Add"} Quote
-          </button>
-          <button onClick={clearFields} className="form__btn">
-            Clear Fields
-          </button>
-        </form>
-      </motion.section>
-    </AnimatePresence>
+        <label htmlFor="author">Quote Author:</label>
+        <input
+          type="text"
+          name="author"
+          className="center"
+          id="author"
+          value={quotes.author}
+          onChange={handleChange}
+        />
+        <button type="submit" className="form__btn">
+          {currentID ? "Edit" : "Add"} Quote
+        </button>
+        <button onClick={clearFields} className="form__btn">
+          Clear Fields
+        </button>
+      </form>
+    </motion.section>
   );
 };
 
