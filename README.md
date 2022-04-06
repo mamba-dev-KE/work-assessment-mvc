@@ -1,20 +1,40 @@
-# Frontend Mentor - QR Code Component Solution
+# Quotes CRUD Application
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This application is a sample applciation for teaching basic CRUD functionalities, MVC architecture, and API creation and consumption in the JavaScript ecosystem
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+- [Installation](#overview)
+- [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
-## Overview
+### Installation
 
-### The challenge
+- Clone the repository
+
+```
+git clone git@github.com:mamba-dev-KE/work-assessment-mvc.git
+
+```
+
+- Create a .env file in the root of the /backend folder
+- Run the following commands from the root of the whole project (in order)
+
+```
+npm install
+npm run dev
+
+```
+
+- The first command will install all dev dependencies while the second command will run start scripts in the backend and frontend
+- After everything runs correctly, you can access the application under
+
+```
+http://localhost:3000
+
+```
 
 Create the desktop and modbile designs as presented in the design foldrer.
 
