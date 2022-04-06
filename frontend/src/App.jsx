@@ -30,8 +30,24 @@ const App = () => {
     }
   }, [currentID, isUpdate, isVisible]);
 
+  // dynamic styles injected and removed based on isVisible state
   const containerStyles = {
     gridTemplateColumns: "100%",
+  };
+
+  // app container animations
+  const containerVariants = {
+    hidden: {
+      x: -1000,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -40,7 +56,9 @@ const App = () => {
       <motion.div
         className="app__container container center grid"
         style={isVisible ? "" : containerStyles}
-        layout
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         {quotesData.length === 0 ? (
           <Loading />

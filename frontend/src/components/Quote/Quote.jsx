@@ -1,4 +1,5 @@
 import "./Quote.scss";
+import { quoteVariant } from "./Animation";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { deleteQuote } from "../../utils/utils";
@@ -25,21 +26,8 @@ const Quote = ({
     setIsVisible(true);
   };
 
-  // article animations
-  const articleVariant = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: { opacity: 1 },
-  };
-
   return (
-    <motion.article
-      className="quote center"
-      variants={articleVariant}
-      initial="hidden"
-      animate="visible"
-    >
+    <motion.article className="quote center grid" variants={quoteVariant}>
       <h3 className="quote__text">" {quote} "</h3>
       <p className="quote__author">{author}</p>
       <div className="quote__edit flex">

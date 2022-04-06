@@ -4,17 +4,9 @@ import { AiFillMinusSquare } from "react-icons/ai";
 import { BsChatLeftQuote } from "react-icons/bs";
 import { motion } from "framer-motion";
 import "./NavBar.scss";
+import { headerVariants } from "./Animation";
 
 const NavBar = ({ isVisible, setIsVisible }) => {
-  // header animations
-  const headerVariants = {
-    hidden: {
-      y: -100,
-      opacity: 0,
-    },
-    visible: { y: 0, opacity: 1, transition: { duration: 1 } },
-  };
-
   return (
     <motion.header
       variants={headerVariants}

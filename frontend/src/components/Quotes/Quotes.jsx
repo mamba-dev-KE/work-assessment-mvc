@@ -12,12 +12,11 @@ const Quotes = ({
 }) => {
   // quotes section animation
   const quotesContainerVariant = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0.8 },
     visible: {
       opacity: 1,
       transition: {
-        duration: 1,
-        staggerChildren: 0.2,
+        staggerChildren: 0.25,
       },
     },
   };
