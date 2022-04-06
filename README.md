@@ -36,18 +36,21 @@ PORT=5000
 - The MONGO_URI can be gotten from the Mongo Atlas platform after creating a database and choosing the connect to application option.
 - The PORT is the port where we want our Node server to run, set it to 5000.
 
-- Run the following command from the root of the whole project in order.
+- Run the following command from the root of the project.
 
 ```
 npm install
 
 ```
+
 - Change directory into the frontend directory and run the command again.
+
 ```
 cd frontend
 npm install
 
 ```
+
 - Change directory back to the root folder and run the following command.
 
 ```
@@ -60,26 +63,21 @@ npm run dev
 - After everything runs correctly, you can access the application under.
 
 ```
-http://localhost:3000
+http://localhost:3000/
 
 ```
 
-Create the desktop and modbile designs as presented in the design foldrer.
-
-### Screenshot
-
-[screenshot.png](https://postimg.cc/3WJm9dyB)
-
 ### Links
 
-- Solution URL: [GitHub](https://github.com/mamba-dev-KE/qr-code-component)
-- Live Site URL: [Visit here](https://wonderful-nobel-e5bbb6.netlify.app/)
+- Code URL: [GitHub](https://github.com/mamba-dev-KE/work-assessment-mvc)
+- Live Site URL: [Visit here](http://mamba-quotes.herokuapp.com/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
+- ReactJS
+- HTML5
 - SASS
 - Framer Motion
 - React Icons
@@ -87,10 +85,8 @@ Create the desktop and modbile designs as presented in the design foldrer.
 - Mobile-first workflow
 - CSS Custom Properties
 - CSS Logical Properties
-- Other modern CSS techniques
 
 ## Author
 
 - Website - [Joseph Maramba Weyao](https://josephmaramba.tech)
-- Frontend Mentor - [@mamba-dev-KE](https://www.frontendmentor.io/profile/mamba-dev-KE)
 - Twitter - [@Maramba_Joseph](https://twitter.com/Maramba_Joseph)
